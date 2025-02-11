@@ -1,6 +1,7 @@
-import './main.css';
+import './About.css';
+import { useNavigate } from "react-router-dom";
 
-const IndexHeader = () =>
+const AboutHeader = () =>
 {
     return (
         <div id="header">
@@ -17,19 +18,7 @@ const IndexHeader = () =>
     );
 }
 
-const IndexMainImg = () => {
-    return (
-        <>
-            <div id="main_picture"></div>
-            <div className="icon_title_text">
-                <p>"WHAT'S FOR DINNER"</p>
-                <h1 className="center">FINALLY HAS AN <br /> EASY ANSWER</h1>
-            </div>
-        </>
-    );
-};
-
-const IndexFooter = () => {
+const AboutFooter = () => {
     return (
         <>
             <div class="chefs">
@@ -45,39 +34,11 @@ const IndexFooter = () => {
     );
 };
 
-const iconData = [
-    { id: 1, imgSrc: "/img/icon1.png", text: "ASDKASDJKASDHADSKJ\nsasl;dfaks;lsa;lfsa;lf\naskldsajdklasdlkaslkadskl" },
-    { id: 2, imgSrc: "/img/icon2.png", text: "ASDKASDJKASDHADSKJ\nsasl;dfaks;lsa;lfsa;lf\naskldsajdklasdlkaslkadskl" },
-    { id: 3, imgSrc: "/img/icon3.png", text: "ASDKASDJKASDHADSKJ\nsasl;dfaks;lsa;lfsa;lf\naskldsajdklasdlkaslkadskl" },
-    { id: 4, imgSrc: "/img/icon4.png", text: "ASDKASDJKASDHADSKJ\nsasl;dfaks;lsa;lfsa;lf\naskldsajdklasdlkaslkadskl" }
-];
-
-const IconBox = ({ imgSrc, text }) => {
-    return (
-        <div className="Area3">
-            <h1 className="center"><img src={imgSrc} alt="icon" /></h1>
-            <h1 className="iconcenter">{text.split("\n").map((line, index) => <div key={index}>{line}</div>)}</h1>
-            <br />......................................................................
-        </div>
-    );
-};
-
-const IndexIconBox = () => {
-    return (
-        <div className="icon_box">
-            {iconData.map((icon) => (
-                <IconBox key={icon.id} imgSrc={icon.imgSrc} text={icon.text} />
-            ))}
-        </div>
-    );
-};
 
 const About = () => (
     <div>
-        <IndexHeader />
-        <IndexMainImg />
-        <IndexIconBox />
-        {/* <IndexFooter/> */}
+        <AboutHeader />
+        <AboutFooter/>
     </div>
     );  
 

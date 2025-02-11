@@ -117,7 +117,12 @@
     float: right;
 }
 
-
+button {
+    border: none; 
+    background-color: #FFFFFF;
+    font-size: 15px;
+  }
+  
 ul{list-style:none;}
 li {list-style: none; float:left;}
 a {text-decoration-line: none;}
