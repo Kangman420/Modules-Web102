@@ -117,12 +117,13 @@
     float: right;
 }
 
-button {
-    border: none; 
-    background-color: #FFFFFF;
-    font-size: 15px;
-  }
-  
+#header a
+{
+    font-size: 17px;
+    color: black;
+    cursor: pointer;
+}
+
 ul{list-style:none;}
 li {list-style: none; float:left;}
 a {text-decoration-line: none;}

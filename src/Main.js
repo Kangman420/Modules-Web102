@@ -1,21 +1,18 @@
 import './main.css';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const IndexHeader = () =>
 {
-    const navigate = useNavigate();  
-
     return (
         <div id="header">
         <ul>
-            
-        <li> <button onClick={() => navigate("/")}><a href="#">How It Works</a></button></li>
-            <li> <button onClick={() => navigate("/")}><a href="#">Gifts</a></button></li>
-            <li> <button onClick={() => navigate("/about")}><a href="#">About</a></button></li>
-            <li><img src="/img/logo.png" alt="Logo" /></li>
-            <li> <button onClick={() => navigate("/")}><a href="#">Login</a></button></li>
-            <li> <button onClick={() => navigate("/")}><a href="#">Members</a></button></li>
-            <li> <button onClick={() => navigate("/")}><a href="#">Contacts </a></button></li>
+            <li> <a>How It Works</a></li>
+            <li> <a>Gifts</a></li>
+            <li> <Link to ='/about'><a>About</a></Link></li>
+            <li> <img src="/img/logo.png" alt="Logo" /></li>
+            <li> <a>Login</a></li>
+            <li> <a>Members</a></li>
+            <li> <a>Contacts</a></li>
             </ul>
         </div>
     );
@@ -79,7 +76,6 @@ const IndexIconBox = () => {
 const IndexMain = () => {
     return (
       <div>
-        
         <IndexHeader />
         <IndexMainImg />
         <IndexIconBox />
