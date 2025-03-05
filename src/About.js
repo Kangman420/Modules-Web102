@@ -1,37 +1,30 @@
 import './About.css';
 import React from "react";  
 import { Link } from "react-router-dom";
+import { BoxLeft, TopBox, TopRight } from "module102-2"
 
 const AboutHeader = () =>
 {
+    const topBoxData = {
+        category1: "Global",
+        category2: "BUSINESS",
+        content: `sadl;sadl;sadsad;lasfl;asfl;
+                  saldsadsadasdaasdsadssdsd
+                  sa;flaskfsalfkaflaslfksakfssdw
+                  asfplsafsla;fka;lfl;ksfl;kafl
+                  s;ladksa;lfsa;flsaf;asl;fa;al`
+    };
+    const topRightImages = ["/img/right1.png", "/img/right2.png"];
     return (
         <div id="top">
           <div className="top_left">
             <img src={process.env.PUBLIC_URL + "/img/chef_about.png"} alt="chef" />
           </div>
-          <div className="top_right">
-            <img src={process.env.PUBLIC_URL + "/img/right1.png"} alt="right1" />
-            <img src={process.env.PUBLIC_URL + "/img/right2.png"} alt="right2" />
-          </div>
-          <div id="top_box">
-            <br />
-            <a href="#">Global</a>
-            <br />
-            <a href="#">BUSINESS</a>
-            <br />
-            <h1>
-              sadl;sadl;sadsad;lasfl;asfl;saldsadsadasdaasdsads
-              <br />
-              sa;flaskfsalfkaflaslfksakfs
-              <br />
-              asfplsafsla;fka;lfl;ksfl;kafl
-              <br />
-              s;ladksa;lfsa;flsaf;asl;fa;al
-            </h1>
-          </div>
+          <TopRight images={topRightImages} />
+          <TopBox data={topBoxData} />
         </div>
-      );
-    };
+    );
+};
 
 const BoxSection = () => {
     const leftBoxes = [
@@ -45,30 +38,15 @@ const BoxSection = () => {
     
     return (
         <div id="box_all">
-        <div className="box_left">
-            {leftBoxes.map((box, index) => (
-            <div className="box" key={index}>
-                <br />
-                {box.title && <a href="#">{box.title}</a>}
-                <h1>
-                {box.content ? box.content.split("\n").map((line, i) => (
-                    <React.Fragment key={i}>
-                    {line}
-                    <br />
-                    </React.Fragment>
-                )) : box.title}
-                </h1>
+            {/* BoxLeft에 leftBoxes를 props로 전달 */}
+            <BoxLeft leftBoxes={leftBoxes} />
+            
+            <div className="box_right">
+                <h1>7</h1>
             </div>
-            ))}
-        </div>
-        <div className="box_right">
-            <h1>7</h1>
-        </div>
         </div>
     );
-    };
-
-
+};
 
 const AboutFooter = () => {
     return (
@@ -95,7 +73,6 @@ const AboutFooter = () => {
         </div>
     );
 };
-
 
 const About = () => 
 {

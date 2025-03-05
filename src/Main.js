@@ -1,5 +1,6 @@
 import './Main.css';
 import { Link } from "react-router-dom";
+import { IndexIconBox } from "module102-1";
 
 const IndexHeader = () =>
 {
@@ -21,6 +22,7 @@ const IndexHeader = () =>
 const IndexMainImg = () => {
     return (
         <>
+
             <div id="main_picture"></div>
             <div className="icon_title_text">
                 <p>"WHAT'S FOR DINNER"</p>
@@ -53,32 +55,12 @@ const iconData = [
     { id: 4, imgSrc: "/img/icon4.png", text: "ASDKASDJKASDHADSKJ\nsasl;dfaks;lsa;lfsa;lf\naskldsajdklasdlkaslkadskl" }
 ];
 
-const IconBox = ({ imgSrc, text }) => {
-    return (
-        <div className="Area3">
-            <h1 className="center"><img src={imgSrc} alt="icon" /></h1>
-            <h1 className="iconcenter">{text.split("\n").map((line, index) => <div key={index}>{line}</div>)}</h1>
-            <br />......................................................................
-        </div>
-    );
-};
-
-const IndexIconBox = () => {
-    return (
-        <div className="icon_box">
-            {iconData.map((icon) => (
-                <IconBox key={icon.id} imgSrc={icon.imgSrc} text={icon.text} />
-            ))}
-        </div>
-    );
-};
-
 const IndexMain = () => {
     return (
       <div>
         <IndexHeader />
         <IndexMainImg />
-        <IndexIconBox />
+        <IndexIconBox iconData={iconData} />
         <IndexFooter />
       </div>
     );

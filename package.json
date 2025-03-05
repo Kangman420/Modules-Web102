@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "module102-1": "file:../module102-1",
+    "module102-2": "github:Kangman420/Module102-2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
